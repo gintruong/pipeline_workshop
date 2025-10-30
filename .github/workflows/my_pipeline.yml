@@ -3,17 +3,17 @@ name: Cypress Testing Workshop pipeline
 on: workflow_dispatch
 
 jobs:
-  testring:
+  testing:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Install dependencies
-        runs: npm install
+        run: npm install
 
       - name: Run Cypress Testing
-        runs: npm run e2e:full
+        run: npm run e2e:full
 
       - name: Upload the testing results
         uses: actions/upload-artifact@v3
